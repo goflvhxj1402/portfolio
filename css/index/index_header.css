@@ -1,0 +1,89 @@
+#header{
+    width: 100%;
+    height: calc(100vw * (100 / 1920));
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+#gnb{
+    width: fit-content;
+    height: calc(100vw * (60 / 1920));
+    box-shadow: 1px 1px 2px #191919;
+    border-radius: calc(100vw * (40 / 1920));
+    background-color: var(--lightBack);
+}
+#gnbWrap{
+    display: flex;
+    gap: calc(100vw * (15 / 1920));
+}
+#gnbWrap > li{
+    width: calc(100vw * (200 / 1920));
+    height: calc(100vw * (60 / 1920));
+    text-align: center;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: calc(100vw * (25 / 1920));
+}
+#gnbWrap > li:hover{
+    height: calc(100vw * (220 / 1920));
+    color: var(--darkFontColor);
+    background-color: var(--darkBack);
+    border: var(--borderLine) solid white;
+    transition: 0.5s;
+}
+#gnbWrap > li:hover a{
+    color: var(--darkFontColor);
+}
+#gnbWrap > li:hover > a{
+    border-bottom: 1px solid white;
+}
+#gnbWrap > li > a{
+    width: calc(100vw * (200 / 1920));
+    height: calc(100vw * (60 / 1920));
+    line-height: calc(100vw * (60 / 1920));
+ 
+    display: block;
+    font-size: calc(100vw * (24 / 1920));
+    font-weight: 700;
+    margin-bottom: calc(100vw * (10 / 1920));
+}
+.snbWrap{
+    display: flex;
+    flex-direction: column;
+    gap: calc(100vw * (10 / 1920));
+}
+.snbWrap li{
+    width: calc(100vw * (200 / 1920));
+    height: calc(100vw * (60 / 1920));
+    display: flex;
+    justify-content: center;
+}
+.snbWrap li a{
+    width: fit-content;
+    height: calc(100vw * (60 / 1920));
+    line-height: calc(100vw * (60 / 1920));
+    display: block;
+    font-size: calc(100vw * (22 / 1920));
+    text-align: center;
+}
+.snbWrap li a:hover{
+    border-bottom: 2px solid white;
+}
+#modeBtn{
+    width: calc(100vw * (75 / 1920));
+    height: calc(100vw * (75 / 1920));
+    line-height: calc(100vw * (75 / 1920));
+    border-radius: 50%;
+    box-shadow: 1px 1px 2px #191919;
+    color: white;
+    display: block;
+    position: absolute;
+    right: calc(100vw * (60 / 1920));
+    font-size: calc(100vw * (22 / 1920));
+    font-weight: 700;
+    text-align: center;
+}
