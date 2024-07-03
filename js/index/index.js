@@ -7,6 +7,7 @@ let isScrolling = false;
 let maxIndex = 5;
 let scrollDelay = 0;
 let isReady = false;
+const aboutWrap = document.getElementById("aboutWrap");
 // calc 기준값 반환
 function setBaseSize() {
     let returnVal = 1920;
@@ -50,7 +51,6 @@ const abThirdTitle = document.querySelector("#aboutCareer > dl > dt");
 const abThirdDt = document.querySelectorAll(".innerCareer dt");
 const abThirdDd = document.querySelectorAll(".innerCareer dd");
 let abMoveAmount;
-setSize();
 
 // about 사이즈지정
 function setSize() {
@@ -58,7 +58,8 @@ function setSize() {
         aboutList[i].style.width = `${scWidth - calcSize(100)}px`;
         aboutList[i].style.height = `${scHeight - calcSize(100)}px`;
     }
-    abMoveAmount = aboutList[0].clientHeight;
+    aboutWrap.style.height = "fit-content";
+    abMoveAmount = scHeight - calcSize(100);
 }
 //about스크롤이벤트
 function abModifySize() {
@@ -67,6 +68,8 @@ function abModifySize() {
     aboutMask.style.height = `${scHeight - calcSize(100)}px`;
     aboutMask.style.borderRadius = `${calcSize(40)}px`;
     aboutMask.style.transition = "0.5s";
+    abMoveAmount = aboutList[0].clientHeight;
+    setSize();
     delay(() => {
         for (let i = 0; i < aboutList.length; i++) {
             aboutList[i].style.opacity = "1.0";
@@ -101,7 +104,6 @@ function abSecondColor() {
 }
 function abThirdColor() {
     abThirdTitle.style.color = "white";
-    console.log(abThirdDd.length);
     for (let i = 0; i < abThirdDd.length; i++) {
         abThirdDd[i].style.color = "white";
         if (i >= abThirdDt.length) {
@@ -116,10 +118,6 @@ const skillDt = document.querySelectorAll("#skill dt");
 const skillDd = document.querySelectorAll("#skill dd");
 
 initSkill();
-skill.addEventListener("click", function (event) {
-    console.log("Check");
-    activeSkill();
-})
 for (let i = 0; i < skillDt.length; i++) {
     skillDt[i].addEventListener("transitionend", () => {
         skillDt[i].style.transition = "0";
@@ -130,11 +128,11 @@ for (let i = 0; i < skillDd.length; i++) {
         skillDd[i].style.transition = "0";
     })
 }
-for(let i = 0; i < skillDd.length; i++){
-    skillDd[i].addEventListener("mouseenter", ()=>{
+for (let i = 0; i < skillDd.length; i++) {
+    skillDd[i].addEventListener("mouseenter", () => {
         skillDd[i].style.transform = "translateY(10px)";
     })
-    skillDd[i].addEventListener("mouseleave", ()=>{
+    skillDd[i].addEventListener("mouseleave", () => {
         skillDd[i].style.transform = "translateY(0px)";
     })
 }
@@ -173,15 +171,13 @@ const proDtMy = proDt.children[1].children[2];
 const proDtWork = proDt.children[1].children[3];
 const proDtEtc = proDt.children[1].children[4];
 const proDl = document.getElementsByClassName("proDl");
-const proInfo = document
-for(let i = 0; i < proDl.length; i++){
-    proDl[i].addEventListener("mouseenter", function(event){
+for (let i = 0; i < proDl.length; i++) {
+    proDl[i].addEventListener("mouseenter", function (event) {
         setDetailInfo(i);
     })
 }
-function setDetailInfo(index){
+function setDetailInfo(index) {
     let info = proDl[index].children[2];
-    console.log();
     proDtImg.style.backgroundImage = `${getComputedStyle(proDl[index].parentElement).backgroundImage}`;
     proDtTitle.innerText = info.getAttribute('data-title');
     proDtMemo.innerText = info.getAttribute('data-memo1');
@@ -216,23 +212,43 @@ window.addEventListener("wheel", function (event) {
                 abSecondScroll(2);
             }
             else{
-                abSecondScroll(1);
+                window.scroll({
+                    top: 0,
+                    behavior: 'smooth'
+                });
             }
             break;
         case 3:
-            let amount = (dir) ? this.window.innerHeight : 0;
-            window.scroll({
-                top: amount,
-                behavior: 'smooth'
-            });
+            if(dir){
+                window.scroll({
+                    top: window.innerHeight,
+                    behavior: 'smooth'
+                });
+            }
+            else{
+                if(isSkillDone){
+                    scrollIndex = 2;
+                    window.scroll({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                }
+            }
             break;
         case 4:
-            if(dir && !isSkillDone){
+            if (dir && !isSkillDone) {
                 scrollDelay = 3500;
                 activeSkill();
                 isSkillDone = true;
             }
-            else{
+            else if(dir && isSkillDone){
+                scrollIndex = 5;
+                window.scroll({
+                    top: this.window.innerHeight * 2,
+                    behavior: 'smooth'
+                });
+            }
+            else {
                 window.scroll({
                     top: this.window.innerHeight,
                     behavior: 'smooth'
@@ -254,5 +270,9 @@ window.addEventListener("DOMContentLoaded", () => {
     setTimeout(() => {
         window.scrollTo(0, 0);
         isReady = true;
+        setSize();
     }, performance.now());
+})
+window.addEventListener("resize", ()=>{
+    setSize();
 })
