@@ -36,7 +36,7 @@ function delay(fnc, delayTime) {
 }
 // ----------header----------
 const modeBtn = document.getElementById("modeBtn");
-const anchor = document.querySelectorAll("a");
+const anchor = document.querySelectorAll("#gnb li a");
 const snbAnchor = document.querySelectorAll(".snbWrap li a");
 for (let i = 0; i < anchor.length; i++) {
     anchor[i].addEventListener("click", function (event) {
