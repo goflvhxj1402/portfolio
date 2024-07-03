@@ -149,8 +149,8 @@
     text-align: center;
     border-radius: calc(100vw * (15 / 1920));
     padding: 0 calc(100vw * (10 / 1920));
-    background-color: rgba(0, 0, 0, 0.2);
-    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
 }
 .innerCareer dt{
     height: calc(100vw * (60 / 1920));
