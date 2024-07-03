@@ -7,6 +7,7 @@ let isScrolling = false;
 let maxIndex = 5;
 let scrollDelay = 0;
 let isReady = false;
+
 const aboutWrap = document.getElementById("aboutWrap");
 // calc 기준값 반환
 function setBaseSize() {
@@ -35,6 +36,47 @@ function delay(fnc, delayTime) {
 }
 // ----------header----------
 const modeBtn = document.getElementById("modeBtn");
+const anchor = document.querySelectorAll("a");
+const snbAnchor = document.querySelectorAll(".snbWrap li a");
+for (let i = 0; i < anchor.length; i++) {
+    anchor[i].addEventListener("click", function (event) {
+        event.preventDefault();
+    })
+}
+for (let i = 0; i < snbAnchor.length; i++) {
+    snbAnchor[i].addEventListener("click", function (event) {
+        console.log(i);
+        switch (i) {
+            case 0:
+                abSecondScroll(1);
+                scrollIndex = 1;
+                break;
+            case 1:
+                abSecondScroll(2);
+                scrollIndex = 2;
+                break;
+            case 2:
+                window.scroll({
+                    top: window.innerHeight,
+                    behavior: 'smooth'
+                });
+                if (!isSkillDone) {
+                    scrollDelay = 3500;
+                    activeSkill();
+                    isSkillDone = true;
+                }
+                scrollIndex = 4;
+                break;
+            case 3:
+                window.scroll({
+                    top: window.innerHeight * 2,
+                    behavior: 'smooth'
+                });
+                scrollIndex = 5;
+                break;
+        }
+    })
+}
 // heaer스크롤이벤트
 function hdReverseColor() {
     modeBtn.style.color = "#191919";
@@ -193,6 +235,7 @@ window.addEventListener("wheel", function (event) {
     isScrolling = true;
     (event.deltaY > 0) ? scrollIndex++ : scrollIndex--;
     scrollDelay = 500;
+    console.log(scrollIndex);
     switch (scrollIndex) {
         case 0:
             if (dir) {
@@ -208,10 +251,8 @@ window.addEventListener("wheel", function (event) {
             abSecondScroll(1);
             break;
         case 2:
-            if(dir){
-                abSecondScroll(2);
-            }
-            else{
+            abSecondScroll(2);
+            if (!dir) {
                 window.scroll({
                     top: 0,
                     behavior: 'smooth'
@@ -219,14 +260,15 @@ window.addEventListener("wheel", function (event) {
             }
             break;
         case 3:
-            if(dir){
+            if (dir) {
                 window.scroll({
                     top: window.innerHeight,
                     behavior: 'smooth'
                 });
             }
-            else{
-                if(isSkillDone){
+            else {
+                if (isSkillDone) {
+                    abSecondScroll(2);
                     scrollIndex = 2;
                     window.scroll({
                         top: 0,
@@ -241,7 +283,7 @@ window.addEventListener("wheel", function (event) {
                 activeSkill();
                 isSkillDone = true;
             }
-            else if(dir && isSkillDone){
+            else if (dir && isSkillDone) {
                 scrollIndex = 5;
                 window.scroll({
                     top: this.window.innerHeight * 2,
@@ -271,8 +313,11 @@ window.addEventListener("DOMContentLoaded", () => {
         window.scrollTo(0, 0);
         isReady = true;
         setSize();
+        abModifySize();
+        hdReverseColor();
+        scrollIndex = 0;
     }, performance.now());
 })
-window.addEventListener("resize", ()=>{
+window.addEventListener("resize", () => {
     setSize();
 })
