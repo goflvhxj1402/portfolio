@@ -54,61 +54,61 @@
     background-size: calc(100vw * (30 / 1920));
  }
  #langC{
-    background-image: url(../../image/c.png);
+    background-image: url(../../images/c.png);
  }
  #langCpp{
-    background-image: url(../../image/cpp.png);
+    background-image: url(../../images/cpp.png);
  }
  #langCSharp{
-    background-image: url(../../image/csharp.png);
+    background-image: url(../../images/csharp.png);
  }
  #langWinApi{
-    background-image: url(../../image/winapi.png);
+    background-image: url(../../images/winapi.png);
  }
  #langHTML{
-    background-image: url(../../image/html.png);
+    background-image: url(../../images/html.png);
  }
  #langCss{
-    background-image: url(../../image/css.png);
+    background-image: url(../../images/css.png);
  }
  #langJsc{
-    background-image: url(../../image/jsc.png);
+    background-image: url(../../images/jsc.png);
  }
  #frameJQuery{
-    background-image: url(../../image/jquery.png);
+    background-image: url(../../images/jquery.png);
  }
  #frameBootStrap{
-    background-image: url(../../image/bootstrap.png);
+    background-image: url(../../images/bootstrap.png);
  }
  #toolVsCode{
-    background-image: url(../../image/vscode.png);
+    background-image: url(../../images/vscode.png);
  }
  #toolVisualStudio{
-    background-image: url(../../image/visualstudio.png);
+    background-image: url(../../images/visualstudio.png);
  }
  #toolIntelliJ{
-    background-image: url(../../image/intellij.png);
+    background-image: url(../../images/intellij.png);
  }
  #toolUnity{
-    background-image: url(../../image/unity.png);
+    background-image: url(../../images/unity.png);
  }
  #toolFigma{
-    background-image: url(../../image/figma.png);
+    background-image: url(../../images/figma.png);
  }
  #langJava{
-    background-image: url(../../image/java.png);
+    background-image: url(../../images/java.png);
  }
  #backPhp{
-    background-image: url(../../image/php.png);
+    background-image: url(../../images/php.png);
  }
  #backMySql{
-    background-image: url(../../image/mysql.png);
+    background-image: url(../../images/mysql.png);
  }
  #backPhoton{
-    background-image: url(../../image/photon.png);
+    background-image: url(../../images/photon.png);
  }
  #backBackEnd{
-    background-image: url(../../image/backend.png);
+    background-image: url(../../images/backend.png);
  }
  /* project */
 #project{
@@ -178,13 +178,13 @@
     border-radius: calc(100vw * (15 / 1920));
 }
 #proWrap li:nth-of-type(1) a:nth-of-type(1){
-    background-image: url(../../image/duksim.png);
+    background-image: url(../../images/duksim.png);
 }
 #proWrap li:nth-of-type(1) a:nth-of-type(2){
-    background-image: url(../../image/dgrentcar.png);
+    background-image: url(../../images/dgrentcar.png);
 }
 #proWrap li:nth-of-type(1) a:nth-of-type(3){
-    background-image: url(../../image/foodit.png);
+    background-image: url(../../images/foodit.png);
 }
 .proDl{
     width: 100%;
@@ -214,13 +214,13 @@
     transition: 1.0s;
 }
 #proWrap li:nth-of-type(2) a:nth-of-type(1){
-    background-image: url(../../image/darkston.png);
+    background-image: url(../../images/darkston.png);
 }
 #proWrap li:nth-of-type(2) a:nth-of-type(2){
-    background-image: url(../../image/mol.png);
+    background-image: url(../../images/mol.png);
 }
 #proWrap li:nth-of-type(2) a:nth-of-type(3){
-    background-image: url(../../image/bubble.png);
+    background-image: url(../../images/bubble.png);
 }
 #proDetail{
     justify-content: center;
@@ -240,7 +240,7 @@
     width: calc(100vw * (350 / 1920));
     height: calc(100vw * (350 / 1920));
     border-radius: calc(100vw * (15 / 1920));
-    background-image: url(../../image/duksim.png);
+    background-image: url(../../images/duksim.png);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;

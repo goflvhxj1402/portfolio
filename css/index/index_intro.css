@@ -1,0 +1,159 @@
+#intro{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 50px;
+    gap: 0px;
+    background-color: #242424;
+    overflow: hidden;
+    position: relative;
+}
+#intro hgroup p{
+    font-size: 48px;
+    height: fit-content;
+    text-align: center;
+    font-family: "양진체";
+    color: white;
+}
+#intro ul{
+    display: flex;
+    width: fit-content;
+    height: 100%;
+    transition: 0.5s;
+}
+.aboutList{
+    width: 100vw;
+    height: 100%;
+}
+.aboutList dl{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    padding: 0 50px;
+    gap: 30px;
+}
+.aboutList dt{
+    width: 30%;
+    height: 100%;
+}
+.aboutList dd{
+    width: 30%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+}
+.aboutList:nth-of-type(1) dl dt{
+    background-image: url(../../images/introImage.jpeg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 50%;
+}
+.aboutList:nth-of-type(1) dl dd p{
+    display: flex;
+    justify-content: space-between;
+}
+.aboutList dd p .aboutTitle{
+    font-size: 28px;
+    font-weight: 900;
+    color: white;
+}
+.aboutList dd p .aboutMemo{
+    font-size: 24px;
+    font-weight: 400;
+    color: white;
+}
+.aboutList:nth-of-type(2) dl dt{
+    background-image: url(../../images/army.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.aboutList:nth-of-type(3) dl dt{
+    background-image: url(../../images/attents.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.aboutList:nth-of-type(4) dl dt{
+    background-image: url(../../images/col.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.aboutList:nth-of-type(5) dl dt{
+    background-image: url(../../images/duck.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.aboutList:nth-of-type(6) dl dt{
+    background-image: url(../../images/it.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.aboutList dl dd p.aboutCarTitle{
+    font-size: 28px;
+    color: white;
+}
+.aboutList dl dd p.aboutCarDate{
+    font-size: 24px;
+    color: white;
+}
+.aboutList dl dd p.aboutCarMemo{
+    font-size: 22px;
+    color: white;
+}
+#arrowWrap{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+
+}
+#arrowWrap a{
+    display: block;
+    width: 52px;
+    height: 103px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+#arrowWrap a:nth-of-type(1){
+    background-image: url(../../images/ltBtn.png);
+}
+#arrowWrap a:nth-of-type(2){
+    background-image: url(../../images/rtBtn.png);
+}
+#circleWrap{
+    position: absolute;
+    width: 180px;
+    height: 30px;
+    left: calc(50vw - 90px);
+    bottom: 50px;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+.circle{
+    display: block;
+    width: 15px;
+    height: 15px;
+    background-image: url(../../images/circle_outline.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.circle:nth-of-type(1){
+    background-image: url(../../images/circle_fill.png);
+}

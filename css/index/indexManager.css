@@ -1,4 +1,5 @@
 @import url(../common.css);
 @import url(./index_header.css);
-@import url(./index_about.css);
-@import url(./index_project.css)
+@import url(./index_title.css);
+@import url(./index_intro.css);
+@import url(./index_project.css);

@@ -46,6 +46,6 @@ h1, h2, h3, h4, a, p, ul, li, dl, dt, dd, body{
     white-space: nowrap;
     overflow: hidden;
 }
-body{
-    overflow: hidden;
+body::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera*/
 }
